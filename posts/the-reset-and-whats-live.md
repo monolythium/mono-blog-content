@@ -76,7 +76,7 @@ Second, **the operator marketplace**. Clusters form around complementary operato
 
 Two parallel surfaces live on the chain: the **public denomination** (the normal LYTH everyone is used to) and the **private denomination** (opt-in non-fungible private tokens). The two denominations are not interchangeable. A user moves value from public to private explicitly, and once value is in the private denomination it can **only transfer or burn** — it cannot bridge to other chains, cannot be wrapped, cannot leak to a public surface. Cross-chain leakage of private balances is impossible by construction, not by policy.
 
-The mempool is **encrypted by default**. Transactions enter as commitments that the proposer cannot read; the threshold DKG executed by the cluster operators decrypts the committed batch only after inclusion order is locked. Front-running, sandwich attacks, and value extraction by the proposer are eliminated at the construction level rather than mitigated with batch auctions or fair-ordering proxies.
+The mempool is **encrypted by default**. Transactions enter as commitments that the proposer cannot read; the cluster operators' threshold decryption opens the committed batch only after inclusion order is locked. Front-running, sandwich attacks, and value extraction by the proposer are eliminated at the construction level rather than mitigated with batch auctions or fair-ordering proxies.
 
 ## Liquidity: bridge-native, risk-visible
 
