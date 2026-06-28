@@ -36,9 +36,9 @@ Three structural commitments fall out of that thesis, and they explain almost ev
 
 DAG consensus protocols let validators commit transactions in parallel rather than serially through a single proposer. Most production DAG-BFT designs require **certificates** — a validator's payload only enters the DAG once a quorum signs off on it — which dramatically increases bandwidth and latency. Starfish-C is the most rigorously proven *uncertified* DAG, meaning payloads enter the DAG immediately and certification happens on a separate pipeline. The result is lower latency under Byzantine conditions and substantially lower bandwidth per validator.
 
-In practice, this means: an anchor (Monolythium's term for a finality unit; equivalent to a block in legacy chain terminology) commits every three seconds, deterministically, and the operator cluster behind that anchor signed it through threshold-BLS aggregation. There is no probabilistic confirmation; once an anchor is committed, it is final. We retire the term "block" only at user-facing surfaces; the JSON-RPC `eth_blockNumber` remains as a compatibility alias.
+In practice, this means: an anchor (Monolythium's term for a finality unit; equivalent to a block in legacy chain terminology) commits every three seconds, deterministically, and the operator cluster behind that anchor signed it with a 7-of-10 ML-DSA-65 signature bitmap. There is no probabilistic confirmation; once an anchor is committed, it is final. We retire the term "block" only at user-facing surfaces; the JSON-RPC `eth_blockNumber` remains as a compatibility alias.
 
-Reed-Solomon shard dissemination distributes payloads across the validator set without requiring every validator to download every shard. Threshold signatures aggregate operator signatures into a single succinct proof.
+Reed-Solomon shard dissemination distributes payloads across the validator set without requiring every validator to download every shard. Each operator signs independently with its own ML-DSA-65 key; an anchor commits once a 7-of-10 bitmap of operator signatures is collected.
 
 ## Execution: Rust to RISC-V, no EVM at the wire
 
@@ -66,7 +66,7 @@ A Monolythium validator slot is a *cluster seat*, not a single-key validator. Th
 
 This unlocks two things that ordinary single-key validators cannot offer.
 
-First, **distributed validator technology**: operators in a cluster do not share a single private key — they use a threshold-signed shared validator key that no single operator possesses. Compromising one operator does not compromise the cluster. Coordinated attacks require coordinating across 7+ independent operators in 7+ independent infrastructure environments.
+First, **distributed validator technology**: operators in a cluster do not share a single private key — each operator holds its own independent ML-DSA-65 key, and an anchor only commits when 7 of the 10 operators in the cluster sign it. Compromising one operator does not compromise the cluster. Coordinated attacks require coordinating across 7+ independent operators in 7+ independent infrastructure environments.
 
 Second, **the operator marketplace**. Clusters form around complementary operators rather than the highest stake-bidders. Operators advertise capabilities — geographic region, hardware profile, archive depth, RPC service tiers — and clusters select operators whose mix gives the cluster the diversity bonus that the protocol rewards. Operators move between clusters through bounded slot swaps. There is one active slot per operator at a time, plus up to two standby seats.
 
