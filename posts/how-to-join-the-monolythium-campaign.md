@@ -13,7 +13,7 @@ archive: monolythium-v1
 
 ## What replaced v1
 
-The current Monolythium is a Rust/RISC-V-native L1 with **Starfish-C DAG-BFT** consensus, **ML-DSA-65** post-quantum signatures at the wire, **100,000,000 LYTH** genesis supply with 8% annual issuance cap, **DVT operator clusters** (100 clusters x 7-10 operators each, 7-of-10 quorum), and a **5,000 LYTH operator self-bond** floor. There is no "100,000 LYTH self-delegation" requirement, no "100,000 LYTH burn" requirement, no "quadratic proposer selection," no "53-validator active set," and no "LythiumBFT" consensus engine in the current network.
+The replacement project targets a Rust/RISC-V-native L1, Starfish-C DAG-BFT, ML-DSA-65 protocol signatures, a 100,000,000 LYTH genesis design with an 8% issuance cap, and DVT operator clusters. These are design and registered-topology facts—not proof of current activation, participation, economics, or performance. The public development RPC was reachable but stale when checked on 16 July 2026; no mainnet is live.
 
 ## Current sources of truth
 

@@ -51,7 +51,7 @@ Fields:
 | `author` | no | Defaults to "Monolythium Foundation" in display. |
 | `updated` | no | Updated date if different from `date`. |
 | `draft` | no | If `true`, the post won't appear on the live site. |
-| `archive` | no | Optional archive label (e.g. `monolythium-v1`). Posts with this set get a v1 pill on the card and a banner at the top of the post explaining the content predates the current chain. |
+| `archive` | no | Optional archive label (for example `monolythium-v1` or `corrected-history`). Any archived post gets an archive pill and correction banner, is noindex, and is excluded from RSS and the sitemap. |
 
 ## Writing posts
 
