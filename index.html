@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Personal Update on Monolythium, IceRoot, and the Road Ahead</title>
+<meta name="description" content="Why we're introducing IceRoot, a lean post-quantum network for asset continuity, what it means for Monolythium and LYTH, and how we're thinking about security.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Monolythium">
+<meta property="og:title" content="A Personal Update on Monolythium, IceRoot, and the Road Ahead">
+<meta property="og:description" content="Why we're introducing IceRoot, a lean post-quantum network for asset continuity, what it means for Monolythium and LYTH, and how we're thinking about security.">
+<meta property="og:url" content="https://monolythium.github.io/mono-blog-content/">
+<meta property="og:image" content="https://monolythium.github.io/mono-blog-content/a-personal-update.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://monolythium.github.io/mono-blog-content/a-personal-update.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --bg: #0f0f17; --surface: #16162a; --text: #e6e7f2; --muted: #9a9cb8;
+    --heading: #ffffff; --accent: #8c8fff; --rule: #26264a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 18px/1.7 "Inter", "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+  header.site { border-bottom: 1px solid var(--rule); }
+  header.site .wrap { display: flex; align-items: center; gap: 10px; height: 64px; }
+  header.site a { display: flex; align-items: center; gap: 10px; color: var(--heading); text-decoration: none;
+    font: 600 13px/1 ui-monospace, "JetBrains Mono", "DejaVu Sans Mono", monospace; letter-spacing: .24em; }
+  header.site svg { width: 26px; height: 26px; }
+  .cover { display: block; width: 100%; height: auto; border-radius: 12px; margin: 40px 0 32px; border: 1px solid var(--rule); }
+  h1 { color: var(--heading); font-size: clamp(30px, 6vw, 44px); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 14px; }
+  .meta { color: var(--muted); font-size: 15px; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--rule); }
+  article h2 { color: var(--heading); font-size: 26px; line-height: 1.3; margin: 52px 0 12px; }
+  article p { margin: 0 0 18px; }
+  article strong { color: var(--heading); }
+  article ul { padding-left: 22px; margin: 0 0 18px; }
+  article li { margin-bottom: 6px; overflow-wrap: anywhere; }
+  footer { border-top: 1px solid var(--rule); margin-top: 64px; padding: 28px 0 48px; color: var(--muted); font-size: 15px; }
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a href="https://monolythium.com/">
+    <svg viewBox="0 0 21000 21000" aria-hidden="true"><path fill="#7c7fff" d="M5997.1 8861.59l0 12103.94 3000 -1681.71 0 -8740.56 -3000 -1681.67zm6000 1681.67l0 8740.56 3000 1681.71 0 -12103.94 -3000 1681.67zm-12000 8777.94l0 -17784.68 2735.85 -1533.62 3343.55 1874.27 -3119.17 1748.5 39.77 17377.23 -3000 -1681.7zm4070.62 -15055.6l6429.39 3604.08 7499.99 -4204.25 0 17337.47 3000 -1681.7 0 -17784.68 -2735.86 -1533.62 -7764.13 4352.3 -3294.64 -1846.83 -3134.75 1757.23z"/></svg>
+    MONOLYTHIUM
+  </a>
+</div></header>
+<main class="wrap">
+  <img class="cover" src="a-personal-update.png" width="1200" height="630"
+       alt="Cover reading A personal update: on Monolythium, IceRoot, and the road ahead, with the Monolythium M mark connected to the IceRoot symbol.">
+  <h1>A Personal Update on Monolythium, IceRoot, and the Road Ahead</h1>
+  <div class="meta">Nayiem · October 21, 2026 · Ecosystem</div>
+  <article>
+ <p>Hi everyone,</p>
+<p>First of all, I want to apologize for the lack of communication over the past few months.</p>
+<p>I know many of you have been waiting patiently for updates about Monolythium, LYTH, the network launch, and what we’ve been working on behind the scenes.</p>
+<p>I also know that some of you are frustrated, and I understand why.</p>
+<p>Today, I don’t want to give you another typical development update filled with technical terminology, ambitious roadmaps, or promises about what we’re going to deliver next month.</p>
+<p>Instead, I want to explain something more personal: how my experiences over the past several years have influenced the decisions we’re making today, why we’re introducing IceRoot, and what this means for Monolythium and everyone who has supported us.</p>
+<h2 id="some-things-stay-with-you">Some things stay with you</h2>
+<p>I’ve been involved in cryptocurrency for many years now.</p>
+<p>During that time, I’ve had the opportunity to build projects, work with talented people, operate infrastructure, and watch an industry grow from something relatively small into what it has become today.</p>
+<p>But I’ve also experienced the darker side of this industry.</p>
+<p>Some of you might remember Altilly, the cryptocurrency exchange I was involved with years ago. What happened there, and everything that followed, had a significant impact on my life.</p>
+<p>It’s something that has stayed with me.</p>
+<p>Later, with Solar, we also experienced security incidents and attempts to compromise systems. And throughout the years, I’ve watched countless other projects, exchanges, bridges, wallets, and blockchain networks suffer from vulnerabilities, exploits, and malicious actors.</p>
+<p>Some of these projects had enormous teams. Some had raised hundreds of millions of dollars. Some had undergone multiple security audits.</p>
+<p>And yet, things still went wrong.</p>
+<p>I’ve seen how quickly years of work can be destroyed by a single vulnerability, a compromised dependency, or a mistake that nobody noticed until it was too late.</p>
+<p>More importantly, I’ve seen what happens to the people who trusted those systems.</p>
+<p>That experience has changed how I look at software development, especially when we’re building technology that people may eventually trust with their money.</p>
+<h2 id="the-reality-of-monolythium">The reality of Monolythium</h2>
+<p>Monolythium started with an ambitious vision, but over time it has grown into something significantly larger than we originally anticipated.</p>
+<p>Today, the wider Monolythium codebase contains more than 700,000 lines of code.</p>
+<p>That’s an enormous amount of software.</p>
+<p>We’re talking about a completely new blockchain architecture involving consensus, post-quantum cryptography, execution, networking, cluster infrastructure, and numerous other interconnected components.</p>
+<p>And yes, we’ve made substantial progress.</p>
+<p>Many of these components are working. We’ve spent countless hours implementing, testing, debugging, and improving the system.</p>
+<p><strong>Monolythium is still actively being developed. That has not changed.</strong></p>
+<p>But there’s something that has increasingly concerned me.</p>
+<p>Even when everything appears to work correctly, how can we be absolutely certain that something isn’t hiding somewhere inside those 700,000 lines of code?</p>
+<p>How can we be certain that an unexpected interaction between two components won’t introduce a vulnerability?</p>
+<p>Or that something we’ve overlooked today won’t become an exploit tomorrow?</p>
+<p>The reality is that we can’t.</p>
+<p>And this becomes even more concerning when you consider how quickly technology is evolving.</p>
+<p>Artificial intelligence is making software development more accessible than ever. People can now generate, analyze, and modify enormous amounts of code in a fraction of the time it would have taken just a few years ago.</p>
+<p>That technology is incredibly useful for developers like us.</p>
+<p>But it also lowers the barrier for people with malicious intentions.</p>
+<p>Attackers have access to increasingly capable AI models, including models without the safeguards commonly found in commercial services.</p>
+<p>I’m not suggesting that AI suddenly makes every blockchain vulnerable. But it changes the environment in which we’re developing software, and it would be irresponsible to ignore that.</p>
+<p>Now consider our situation.</p>
+<p>We’re a small development team. Monolythium is primarily being developed by myself and two other developers.</p>
+<p>We don’t have hundreds of engineers, dedicated security departments, or unlimited financial resources.</p>
+<p>And we’re building something that has grown into an extremely complex system.</p>
+<p>Releasing that software into production and expecting people to trust it with real financial value, simply because it appears to work, is not something I’m comfortable doing.</p>
+<h2 id="why-not-just-audit-monolythium">Why not just audit Monolythium?</h2>
+<p>That’s a reasonable question.</p>
+<p>And the answer is that we absolutely intend for Monolythium to undergo independent security reviews before it is considered ready for production.</p>
+<p>But auditing a system of this size and complexity is not straightforward.</p>
+<p>We’re not just dealing with conventional blockchain components. We’re also working with post-quantum cryptography, a new consensus architecture, and systems that require specialized expertise.</p>
+<p>Finding qualified security researchers who can properly evaluate the entire architecture, understand the interactions between components, identify potential vulnerabilities, and verify the fixes is a substantial undertaking.</p>
+<p>And an audit isn’t a magic certificate that makes software safe.</p>
+<p>Vulnerabilities can be discovered after an audit. Fixing one issue can introduce another. Significant architectural changes can invalidate earlier security assumptions.</p>
+<p>For a system of this scale, comprehensive reviews, remediation, additional testing, and repeated audits could potentially cost millions of dollars.</p>
+<p>That’s not a budget we currently have available.</p>
+<p>I would rather acknowledge that reality than pretend otherwise.</p>
+<p>And I would certainly rather delay a launch than release something prematurely and spend the next several years regretting it.</p>
+<h2 id="another-realization">Another realization</h2>
+<p>There’s something else that happened recently that reinforced my thinking.</p>
+<p>Last month, we spent approximately an entire month working on a core component of Monolythium.</p>
+<p>It was technically challenging, required substantial engineering effort, and was something we considered important for the network.</p>
+<p>Then, just as we were making progress, another blockchain project released an open-source implementation addressing essentially the same problem.</p>
+<p>Suddenly, something we’d spent weeks developing independently was available for everyone to study, use, and improve.</p>
+<p>And that made me question something.</p>
+<p>Why are we spending so much time independently developing every component of an enormous system when other talented teams are working on similar problems?</p>
+<p>Why should we insist on building everything ourselves when we can learn from implementations that already exist?</p>
+<p>Innovation is important. But innovation for the sake of innovation isn’t necessarily progress.</p>
+<p>Especially when security is involved.</p>
+<p>Sometimes the better engineering decision is to use established architectural principles, reduce unnecessary complexity, and concentrate on the things that genuinely need to be different.</p>
+<p>That realization played an important role in our decision to create IceRoot.</p>
+<h2 id="introducing-iceroot">Introducing IceRoot</h2>
+<p>IceRoot is a separate blockchain network we’re developing alongside Monolythium.</p>
+<p>But unlike Monolythium, IceRoot has a very specific purpose.</p>
+<p><strong>IceRoot is designed to provide a lean, post-quantum network for digital assets, their long-term continuity, and migration between blockchain ecosystems.</strong></p>
+<p>Its architecture draws inspiration from several established blockchain systems, including ARK-style delegated proof-of-stake networks and other proven approaches to transaction processing, validator coordination, and network operation.</p>
+<p>I want to emphasize something here.</p>
+<p>We’re talking about architectural principles and design decisions, not simply copying another project’s code.</p>
+<p>We’ve taken lessons from systems that have operated in real-world environments, combined ideas that complement each other, and deliberately excluded features that introduce unnecessary complexity.</p>
+<p>There is no Ethereum Virtual Machine.</p>
+<p>No Solidity.</p>
+<p>No arbitrary smart-contract execution.</p>
+<p>No enormous execution environment that needs to support thousands of unpredictable applications.</p>
+<p>And no ambition to become a blockchain that does absolutely everything.</p>
+<p>Instead, we’re focusing on a much smaller set of responsibilities and doing those things properly.</p>
+<p>Transactions. Native assets. Validators. Deterministic finality. Post-quantum signatures. Asset migration.</p>
+<p>That’s the foundation.</p>
+<p>By limiting what the protocol is responsible for, we can reduce the number of components that interact with consensus, make the implementation easier to understand, and narrow the attack surface.</p>
+<p>Of course, simpler doesn’t mean invulnerable.</p>
+<p>IceRoot will still require testing, security reviews, and careful engineering.</p>
+<p>But the difference is that we’re building a system where those responsibilities are deliberately constrained from the beginning.</p>
+<h2 id="what-is-iceroot-actually-for">What is IceRoot actually for?</h2>
+<p>One of the problems I’ve observed throughout the years is what happens to digital assets when a blockchain project shuts down, changes direction, or needs to replace its underlying infrastructure.</p>
+<p>There are thousands of tokens and assets spread across different networks.</p>
+<p>Some of those networks will eventually disappear.</p>
+<p>Others will become obsolete.</p>
+<p>Some will encounter technical problems or security limitations that make continued operation difficult.</p>
+<p>And some projects will simply decide that they need their own blockchain.</p>
+<p>IceRoot is intended to address those situations.</p>
+<p>A project should be able to launch a native asset on IceRoot without needing to develop an entire blockchain.</p>
+<p>An existing project should be able to migrate its assets from another network.</p>
+<p>A project retiring an old blockchain should have a way to preserve its assets rather than forcing its community to start over.</p>
+<p>And a project developing its own blockchain should be able to operate on IceRoot temporarily, then migrate to its own network when it’s ready.</p>
+<p>That’s what we mean by <strong>post-quantum asset continuity</strong>.</p>
+<p>We’re not trying to compete with every general-purpose blockchain.</p>
+<p>We’re trying to provide infrastructure that other projects can rely on.</p>
+<p>And importantly, IceRoot itself is intended to be a complete product rather than a never-ending development experiment.</p>
+<h2 id="a-blockchain-without-an-endless-roadmap">A blockchain without an endless roadmap</h2>
+<p>Something else we’re doing differently with IceRoot is how we approach its development roadmap.</p>
+<p>For the next few months, our focus is straightforward.</p>
+<p>Complete the production implementation, finalize the post-quantum cryptography and consensus integration, finish the SDK and wallet infrastructure, conduct the necessary testing and security validation, and prepare the network for launch.</p>
+<p>Once those requirements are satisfied, we intend to release IceRoot as a complete network.</p>
+<p>After that, we’re not planning an endless series of protocol upgrades, new execution environments, or features added simply to keep a roadmap looking exciting.</p>
+<p>The goal is to reach a stable protocol and keep it stable.</p>
+<p>Of course, security fixes, compatibility updates, and necessary maintenance will remain part of operating any blockchain.</p>
+<p>But I don’t believe a blockchain needs to reinvent itself every few months to remain relevant.</p>
+<p>Sometimes, the most valuable thing a network can offer is predictability.</p>
+<p><strong>Build it properly. Release it when it’s ready. Maintain it responsibly. And let people use it.</strong></p>
+<h2 id="what-happens-to-monolythium">What happens to Monolythium?</h2>
+<p>This is probably the most important part of the announcement.</p>
+<p><strong>Monolythium is not being abandoned, discontinued, or replaced by IceRoot.</strong></p>
+<p>Monolythium remains a separate project with a much broader technical vision.</p>
+<p>And development will continue.</p>
+<p>What changes is the pressure surrounding its launch.</p>
+<p>Instead of trying to bring an enormous, experimental blockchain into production before we’re fully comfortable with its security, we’re giving ourselves the time to develop and validate it properly.</p>
+<p>This also gives us an opportunity to reassess some architectural decisions, learn from other open-source implementations, and potentially reduce unnecessary complexity before moving forward.</p>
+<p>I don’t want Monolythium to become a race against an arbitrary deadline.</p>
+<p>I want it to become something we can genuinely stand behind.</p>
+<p>And if that takes longer than originally anticipated, then that’s the decision I’m prepared to make.</p>
+<h2 id="what-happens-to-lyth">What happens to LYTH?</h2>
+<p>Rather than making everyone wait for Monolythium’s mainnet, we’ve decided to take a different approach.</p>
+<p><strong>LYTH will initially launch as a native asset on IceRoot.</strong></p>
+<p>That means LYTH can exist on an operating blockchain, be transferred between wallets, and eventually be integrated with exchanges and other services without depending on Monolythium’s mainnet being ready.</p>
+<p>When Monolythium has completed the development, testing, and independent security validation required for production, LYTH will migrate to its native network.</p>
+<p>This is also an opportunity to demonstrate IceRoot’s intended purpose in practice.</p>
+<p>Monolythium will become one of the first projects to use IceRoot as a temporary home for its asset before migrating to its own blockchain.</p>
+<p>And throughout that process, Monolythium remains Monolythium.</p>
+<p>The underlying network hosting LYTH changes, but the long-term objective does not.</p>
+<h2 id="what-about-iceroots-own-token">What about IceRoot’s own token?</h2>
+<p>IceRoot will also have its own native token, ROOT.</p>
+<p>ROOT and LYTH are separate assets with different purposes.</p>
+<p>ROOT belongs to the IceRoot network and its native economics, including validator participation.</p>
+<p>LYTH belongs to Monolythium and will initially operate on IceRoot before its planned migration.</p>
+<p>We also want to recognize the people who have supported Monolythium throughout its development.</p>
+<p>Our intention is to allocate a meaningful portion of ROOT to eligible Monolythium supporters, including people who participated in earlier initiatives and those with outstanding token allocations.</p>
+<p>The exact eligibility criteria, allocation amounts, distribution process, and timing will be communicated separately once they have been finalized.</p>
+<p>I don’t want to announce arbitrary numbers today and then change them later.</p>
+<p>But I do want to make one thing clear.</p>
+<p><strong>The people who have supported Monolythium have not been forgotten.</strong></p>
+<p>And I want the introduction of IceRoot to create additional opportunities for that community rather than leaving everyone waiting indefinitely.</p>
+<h2 id="where-we-stand-today">Where we stand today</h2>
+<p>IceRoot is already under active development.</p>
+<p>We’ve been working on the core network, validator infrastructure, explorer, wallets, SDKs, and supporting tooling.</p>
+<p>A testnet has been deployed, and the next steps involve completing the remaining integration work, validating network behavior, and preparing the infrastructure needed for broader participation.</p>
+<p>You can follow the project here:</p>
+<ul>
+<li>Website: <a href="https://iceroot.com">https://iceroot.com</a></li>
+<li>Documentation: <a href="https://docs.iceroot.com">https://docs.iceroot.com</a></li>
+<li>Explorer: <a href="https://scan.iceroot.com">https://scan.iceroot.com</a></li>
+<li>Validator portal: <a href="https://validators.iceroot.com">https://validators.iceroot.com</a></li>
+</ul>
+<p>Please keep in mind that IceRoot is still under development.</p>
+<p>Some technical specifications, protocol parameters, and economic details may change as we complete testing.</p>
+<p>We’re not going to call something production-ready simply because it runs.</p>
+<h2 id="a-few-final-words">A few final words</h2>
+<p>I know this hasn’t been the journey many of you expected.</p>
+<p>There have been delays. Plans have changed. Communication hasn’t always been where it should have been.</p>
+<p>And I take responsibility for that.</p>
+<p>But I also hope you understand why I’m making these decisions.</p>
+<p>I’ve spent too many years in this industry, experienced too many difficult situations, and seen too many projects suffer from preventable mistakes to ignore the risks involved in releasing complex financial infrastructure.</p>
+<p>I don’t want to launch something simply to satisfy expectations.</p>
+<p>I don’t want to make promises about dates that depend on work we haven’t completed.</p>
+<p>And I certainly don’t want people putting their money into something if I don’t believe we’ve done everything reasonably possible to protect them.</p>
+<p>IceRoot gives us a way to move forward with a more focused architecture while continuing to work toward the larger vision behind Monolythium.</p>
+<p>It isn’t a shortcut around security.</p>
+<p>It’s a decision to reduce unnecessary complexity and take a more responsible approach to what we’re building.</p>
+<p>There is still work ahead of us, and I’m not going to pretend otherwise.</p>
+<p>But I’m confident that this is the right direction.</p>
+<p>To everyone who has stayed with us, supported our work, operated infrastructure, contributed to the community, or simply waited patiently for news:</p>
+<p>Thank you.</p>
+<p>I genuinely appreciate it.</p>
+<p><strong>— Nayiem</strong></p> 
+  </article>
+  <footer>Monolythium · <a href="https://monolythium.com/">monolythium.com</a> · <a href="https://iceroot.com">iceroot.com</a></footer>
+</main>
+</body>
+</html>
