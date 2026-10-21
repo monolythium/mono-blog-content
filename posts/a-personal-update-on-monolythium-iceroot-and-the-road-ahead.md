@@ -2,6 +2,8 @@
 title: "A Personal Update on Monolythium, IceRoot, and the Road Ahead"
 date: 2026-10-21
 excerpt: "Why we're introducing IceRoot, a lean post-quantum network for asset continuity, what it means for Monolythium and LYTH, and how we're thinking about security."
+cover: "/blog-covers/a-personal-update.png"
+coverAlt: "Cover reading A personal update: on Monolythium, IceRoot, and the road ahead, with the Monolythium M mark connected to the IceRoot symbol."
 category: Ecosystem
 tags:
   - iceroot
